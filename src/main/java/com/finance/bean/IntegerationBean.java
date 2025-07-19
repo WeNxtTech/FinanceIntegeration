@@ -22,4 +22,8 @@ public class IntegerationBean {
 	private String companyId;
 	@JsonProperty("ProductId")
 	private String productId;
+	
+	@JsonProperty("sysId")
+	private String sysId;
+	
 }

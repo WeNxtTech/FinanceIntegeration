@@ -129,7 +129,7 @@ public class SecurityConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)  // Disable CSRF for APIs
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/generateToken").permitAll() // Allow JWT generation API
+                        .requestMatchers("/auth/generateToken","/actuator/prometheus","/actuator/**").permitAll() // Allow JWT generation API
                         .anyRequest().authenticated()                // Secure other endpoints
                 )
                 .authenticationProvider(staticAuthenticationProvider())
